@@ -85,7 +85,13 @@ def draw_grid():
 			tile_color = PATH_COLOR if (col, row) in PATH_SET else GRASS_COLOR
 			pygame.draw.rect(screen, tile_color, (x, y, TILE_SIZE, TILE_SIZE))
 			pygame.draw.rect(screen, GRID_COLOR, (x, y, TILE_SIZE, TILE_SIZE), 1)
-			@dataclass
+			@dataclass for row in range(GRID_ROWS):
+		for col in range(GRID_COLS):
+			x = col * TILE_SIZE
+			y = row * TILE_SIZE
+			tile_color = PATH_COLOR if (col, row) in PATH_SET else GRASS_COLOR
+			pygame.draw.rect(screen, tile_color, (x, y, TILE_SIZE, TILE_SIZE))
+			pygame.draw.rect(screen, GRID_COLOR, (x, y, TILE_SIZE, TILE_SIZE), 1)
 class Enemy:
 x: float
 y: float
